@@ -81,7 +81,8 @@ private static Connection connect() {
 			 } 
 			 
 			 // Prepare the html table to be displayed
-			 output = "<table border='1'><tr><th>order Code</th>" + 
+			 output = "<table border='1'>"+ "<tr><th>order ID</th>" + 
+			 "<th>order Code</th>" + 
 			 "<th>order Type</th>" + 
 			 "<th>Customer Name</th>" + 
 			 "<th>Customer Contact</th>" +
@@ -107,6 +108,7 @@ private static Connection connect() {
 				 String cvvNo = Integer.toString(rs.getInt("cvvNo"));
 				 
 				 // Add into the html table
+				 output += "<td>" + orderID + "</td>";
 				 output += "<td>" + orderCode + "</td>";
 				 output += "<td>" + orderType + "</td>";   
 				 output += "<td>" + customerName + "</td>"; 
@@ -117,11 +119,8 @@ private static Connection connect() {
 				 
 				 
 				 // buttons
-				 output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-info'></td>"
-				 + "<td><form method='post' action='order.jsp'>"
-				 + "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
-				 + "<input name='orderID' type='hidden' value='" + orderID 
-				 + "'>" + "</form></td></tr>"; 
+				 output += "<td><input name='btnUpdate' type='button' value='Update' class='btnUpdate btn btn-secondary'></td>"
+						 + "<td><button class='btnRemove btn btn-danger' name='btnRemove' id ='btnRemove' value='"+ orderID +"' >Remove</button></td></tr>";
 			 } 
 			 	 con.close(); 
 			 	 // Complete the html table
@@ -164,7 +163,8 @@ private static Connection connect() {
 				 preparedStmt.execute(); 
 				 con.close(); 
 				 //output = "Updated successfully"; 
-				 String newOrder = readorder(); output = "{\"status\":\"success\", \"data\": \"" + newOrder + "\"}"; 
+				 String newOrder = readorder(); 
+				 output = "{\"status\":\"success\", \"data\": \"" + newOrder + "\"}"; 
 
 			 } 
 			 catch (Exception e) 

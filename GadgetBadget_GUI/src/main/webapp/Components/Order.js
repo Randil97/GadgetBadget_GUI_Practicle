@@ -24,7 +24,7 @@ $(document).on("click", "#btnSave", function(event) {
 	}
 	
 	// If valid------------------------
-	var type = ($("#hidOrderIDSave").val() == "") ? "POST" : "PUT";
+	var type = ($("#orderID").val() == "") ? "POST" : "PUT";
 
 	$.ajax({
 		url : "OrderAPI",
@@ -32,7 +32,9 @@ $(document).on("click", "#btnSave", function(event) {
 		data : $("#ORDER").serialize(),
 		dataType : "text",
 		complete : function(response, status) {
+			//console.log(status);
 			onItemSaveComplete(response.responseText, status);
+			window.location.reload(true);
 		}
 	});
 
@@ -67,7 +69,7 @@ function onItemSaveComplete(response, status) {
 		$("#alertError").show();
 	}
 	
-	$("#hidOrderIDSave").val("");
+	$("#orderID").val("");
 	$("#ORDER")[0].reset();
 }
 
@@ -76,10 +78,11 @@ $(document).on("click", ".btnRemove", function(event) {
 	$.ajax({
 		url : "OrderAPI",
 		type : "DELETE",
-		data : "orderID=" + $(this).data("orderID"),
+		data : "orderID=" + event.target.value,
 		dataType : "text",
 		complete : function(response, status) {
 			onItemDeleteComplete(response.responseText, status);
+			window.location.reload(true);
 		}
 	});
 });
@@ -117,14 +120,14 @@ function onItemDeleteComplete(response, status) {
 // UPDATE==========================================
 $(document).on("click",".btnUpdate",function(event)
 		{
-			$("#hidOrderIDSave").val($(this).data("orderID"));
-			$("#orderCode").val($(this).closest("tr").find('td:eq(0)').text());
-			$("#orderType").val($(this).closest("tr").find('td:eq(1)').text());
-			$("#customerName").val($(this).closest("tr").find('td:eq(2)').text());
-			$("#customerContact").val($(this).closest("tr").find('td:eq(3)').text());
-			$("#totalAmount").val($(this).closest("tr").find('td:eq(4)').text());
-			$("#cardNo").val($(this).closest("tr").find('td:eq(5)').text());
-			$("#cvvNo").val($(this).closest("tr").find('td:eq(6)').text());		
+			$("#orderID").val($(this).closest("tr").find('td:eq(0)').text());
+			$("#orderCode").val($(this).closest("tr").find('td:eq(1)').text());
+			$("#orderType").val($(this).closest("tr").find('td:eq(2)').text());
+			$("#customerName").val($(this).closest("tr").find('td:eq(3)').text());
+			$("#customerContact").val($(this).closest("tr").find('td:eq(4)').text());
+			$("#totalAmount").val($(this).closest("tr").find('td:eq(5)').text());
+			$("#cardNo").val($(this).closest("tr").find('td:eq(6)').text());
+			$("#cvvNo").val($(this).closest("tr").find('td:eq(7)').text());		
 		});
 
 
