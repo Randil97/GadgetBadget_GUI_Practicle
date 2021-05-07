@@ -50,11 +50,15 @@ private static Connection connect() {
 				 				 
 				 preparedStmt.execute(); 
 				 con.close(); 
-				 output = "Inserted successfully"; 
+				 String newOrder = readorder(); 
+				 output = "{\"status\":\"success\", \"data\": \"" + newOrder + "\"}";
+				 //output = "Inserted successfully"; 
 		 } 
 		 catch (Exception e) 
 		 { 
-			 output = "Error while inserting the order.";
+			 //output = "Error while inserting the order.";
+			 output = "{\"status\":\"error\", \"data\": \"Error while inserting the order.\"}";
+			 System.err.println(e.getMessage());
 			 System.out.println(e.getMessage());
 				System.out.println(e);
 				e.printStackTrace();
@@ -159,11 +163,14 @@ private static Connection connect() {
 				 // execute the statement
 				 preparedStmt.execute(); 
 				 con.close(); 
-				 output = "Updated successfully"; 
+				 //output = "Updated successfully"; 
+				 String newOrder = readorder(); output = "{\"status\":\"success\", \"data\": \"" + newOrder + "\"}"; 
+
 			 } 
 			 catch (Exception e) 
 			 { 
-				 output = "Error while updating the item."; 
+				 //output = "Error while updating the item."; 
+				 output = "{\"status\":\"error\", \"data\": \"Error while updating the order.\"}"; 
 				 System.err.println(e.getMessage()); 
 				 System.out.println(e);
 			 } 
@@ -193,11 +200,14 @@ private static Connection connect() {
 				 // execute the statement
 				 preparedStmt.execute(); 
 				 con.close(); 
-				 output = "Deleted successfully"; 
+				 //output = "Deleted successfully"; 
+				 String newOrder = readorder(); output = "{\"status\":\"success\", \"data\": \"" + newOrder + "\"}";
+
 			 } 
 			 catch (Exception e) 
 			 { 
-				 output = "Error while deleting the order."; 
+				 //output = "Error while deleting the order."; 
+				 output = "{\"status\":\"error\", \"data\": \"Error while deleting the order.\"}"; 
 				 System.err.println(e.getMessage()); 
 				 System.out.println(e);
 			 } 
