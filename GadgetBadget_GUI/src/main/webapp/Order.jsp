@@ -53,7 +53,7 @@
 						
 						<div class="form-outline mb-4">
 						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Total Amount:</label>
-						    <input type="text" id="totalAmount" class="form-control" name="totalAmount">						    
+						    <input type="number" id="totalAmount" class="form-control" name="totalAmount">						    
 						</div>
 						 
 						<div class="row mb-4">
@@ -85,15 +85,17 @@
 			
 			<br> 
 			
-			<div class="container" id="OrderGrid">
+			<div class="container">
 				<fieldset>
 					<legend><b>View Order Details</b></legend>
-					<form method="post" action="Order.jsp" class="table table-striped">
+					<div id="OrderGrid">
+						<form method="post" action="Order.jsp" class="table table-striped">
 						<%
 						    Order viewOrder = new Order();
 							out.print(viewOrder.readorder());
 						%>
 					</form>
+					</div>
 					<br>
 				</fieldset>
 			</div>

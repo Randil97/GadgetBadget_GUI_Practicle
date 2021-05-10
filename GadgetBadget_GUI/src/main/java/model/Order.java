@@ -44,15 +44,18 @@ private static Connection connect() {
 				 preparedStmt.setString(2, order_type);
 				 preparedStmt.setString(3, customer_name);
 				 preparedStmt.setString(4, customer_contact);
-				 preparedStmt.setDouble(5, Double.parseDouble(total_amount));
+				 preparedStmt.setString(5, total_amount);
 				 preparedStmt.setString(6, card_no);
 				 preparedStmt.setString(7, cvv_no);
-				 				 
+				 			
+				 //System.out.println(query);
+				 
 				 preparedStmt.execute(); 
 				 con.close(); 
 				 String newOrder = readorder(); 
+				 
 				 output = "{\"status\":\"success\", \"data\": \"" + newOrder + "\"}";
-				 //output = "Inserted successfully"; 
+				 
 		 } 
 		 catch (Exception e) 
 		 { 
@@ -104,7 +107,7 @@ private static Connection connect() {
 				 String customerName = rs.getString("customerName"); 
 				 String customerContact = rs.getString("customerContact");
 				 String totalAmount = Double.toString(rs.getDouble("totalAmount")); 
-				 String cardNo = Integer.toString(rs.getInt("cardNo"));
+				 String cardNo = rs.getString("cardNo");
 				 String cvvNo = Integer.toString(rs.getInt("cvvNo"));
 				 
 				 // Add into the html table

@@ -32,9 +32,8 @@ $(document).on("click", "#btnSave", function(event) {
 		data : $("#ORDER").serialize(),
 		dataType : "text",
 		complete : function(response, status) {
-			//console.log(status);
 			onItemSaveComplete(response.responseText, status);
-			window.location.reload(true);
+		
 		}
 	});
 
@@ -82,7 +81,7 @@ $(document).on("click", ".btnRemove", function(event) {
 		dataType : "text",
 		complete : function(response, status) {
 			onItemDeleteComplete(response.responseText, status);
-			window.location.reload(true);
+			//window.location.reload(true);
 		}
 	});
 });
