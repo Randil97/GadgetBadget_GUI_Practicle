@@ -34,6 +34,9 @@ $(document).on("click", "#btnSave", function(event) {
 		complete : function(response, status) {
 			onItemSaveComplete(response.responseText, status);
 		
+			$("#alertSuccess").fadeTo(2000, 500).slideUp(500, function() {
+				$("#alertSuccess").slideUp(500);
+			});
 		}
 	});
 
@@ -82,6 +85,9 @@ $(document).on("click", ".btnRemove", function(event) {
 		complete : function(response, status) {
 			onItemDeleteComplete(response.responseText, status);
 			//window.location.reload(true);
+			$("#alertSuccess").fadeTo(2000, 500).slideUp(500, function() {
+				$("#alertSuccess").slideUp(500);
+			});
 		}
 	});
 });

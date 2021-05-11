@@ -84,7 +84,8 @@ private static Connection connect() {
 			 } 
 			 
 			 // Prepare the html table to be displayed
-			 output = "<table border='1'>"+ "<tr><th>order ID</th>" + 
+			 output = "<table class='container-fluid' border='1'>"+ 
+			 "<thead><th>order ID</th>" + 
 			 "<th>order Code</th>" + 
 			 "<th>order Type</th>" + 
 			 "<th>Customer Name</th>" + 
@@ -92,7 +93,7 @@ private static Connection connect() {
 			 "<th>Total Amount</th>" +
 			 "<th>Card No</th>" +
 			 "<th>CVV No</th>" +
-			 "<th>Update</th><th>Remove</th></tr>"; 
+			 "<th>Update</th><th>Remove</th></thead>"; 
 		 
 			 
 			 String query = "SELECT * FROM order_gui"; 
