@@ -5,7 +5,7 @@
 <html>
 <head>
 		<meta charset="UTF-8">
-			<title>Order Management - GadgetBadget</title>
+			<title>GadgetBadget - Order Management</title>
 	
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
@@ -119,7 +119,7 @@ body {
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto sidenav" id="navAccordion">
 				<li class="nav-item ml-3"><a class="nav-link"
-					href="AdminPanel.jsp">Home </a></li>
+					href="AdminPanel.jsp">Dashboard </a></li>
 				<!-- 				<li class="nav-item"><a class="nav-link" href="#">Item 1</a></li> -->
 
 				<li class="nav-item active ml-3"><a
@@ -132,16 +132,13 @@ body {
 						data-parent="#navAccordion">
 						<li style="list-style-type: none;" class="nav-item"><a
 							class="nav-link" href="Order.jsp"> <span
-								class="nav-link-text">Add Order</span>
+								class="nav-link-text">Add Order Details</span>
 						</a></li>
 					</ul></li>
-				<li class="nav-item ml-3"><a class="nav-link" href="#">UserDetails</a></li>
-				<li class="nav-item ml-3"><a class="nav-link" href="#">Project
-						Details</a></li>
-				<li class="nav-item ml-3"><a class="nav-link" href="#">Funder
-						Details</a></li>
-				<li class="nav-item ml-3"><a class="nav-link" href="#">Product
-						Details</a></li>
+				<li class="nav-item ml-3"><a class="nav-link" href="#">User Details</a></li>
+				<li class="nav-item ml-3"><a class="nav-link" href="#">Project Details</a></li>
+				<li class="nav-item ml-3"><a class="nav-link" href="#">Funderb Details</a></li>
+				<li class="nav-item ml-3"><a class="nav-link" href="#">Product Details</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -160,44 +157,62 @@ body {
 					<form id="ORDER" name="ORDER" class="border border-light p-5">
 						
 						<div class="form-outline mb-4">
-						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Order Code:</label>
+						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Order Code  :</label>
 						    <input type="hidden" id="orderID" name="orderID">
-						    <input type="text" id="orderCode" class="form-control" name="orderCode">						    
+						    <input type="text" id="orderCode" class="form-control" name="orderCode">
+						    <small id="passwordHelpInline" class="text-muted">
+      								Required*
+    							</small>						    
 						</div>
 						
 						<div class="form-outline mb-4">
-						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Order Type:</label>
-						    <input type="text" id="orderType" class="form-control" name="orderType">						    
+						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Order Type  :</label>
+						    <input type="text" id="orderType" class="form-control" name="orderType">
+						    <small id="passwordHelpInline" class="text-muted">
+      								Required*
+    							</small>						    
 						</div>
 						
 						<div class="form-outline mb-4">
-						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Customer Name:</label>
-						    <input type="text" id="customerName" class="form-control" name="customerName">						    
+						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Customer Name  :</label>
+						    <input type="text" id="customerName" class="form-control" name="customerName">
+						    <small id="passwordHelpInline" class="text-muted">
+      								Required*
+    							</small>						    
 						</div>
 						
 						<div class="form-outline mb-4">
-						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Customer Contact Number:</label>
-						    <input type="text" id="customerContact" class="form-control" name="customerContact">						    
+						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Customer Contact Number  :</label>
+						    <input type="number" id="customerContact" class="form-control" name="customerContact">
+						    <small id="passwordHelpInline" class="text-muted">
+      								Must be 10 digit number
+    							</small>						    
 						</div>
 						
 						<div class="form-outline mb-4">
-						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Total Amount:</label>
-						    <input type="number" id="totalAmount" class="form-control" name="totalAmount">						    
+						    <label class="form-label" for="form6Example3" class="col-sm-2 col-form-label col-form-label-sm">Total Amount  :</label>
+						    <input type="number" id="totalAmount" class="form-control" name="totalAmount">
+						    <small id="passwordHelpInline" class="text-muted">
+      								Required*
+    							</small>						    
 						</div>
 						 
 						<div class="row mb-4">
 						    <div class="col">
 						      <div class="form-outline">
-						        <label class="form-label" for="form6Example1" class="col-sm-2 col-form-label col-form-label-sm">Credit/Debit Card No:</label>
-						        <input type="number" id="cardNo" class="form-control" name="cardNo">						        
+						        <label class="form-label" for="form6Example1" class="col-sm-2 col-form-label col-form-label-sm">Credit/Debit Card No  :</label>
+						        <input type="number" id="cardNo" class="form-control" name="cardNo">
+						        <small id="passwordHelpInline" class="text-muted">
+      								Required*
+    							</small>						        
 						      </div>
 						    </div>
 						    <div class="col">
 						      <div class="form-outline">
-								<label class="form-label" for="form6Example2" class="col-sm-2 col-form-label col-form-label-sm">CVV No:</label>
+								<label class="form-label" for="form6Example2" class="col-sm-2 col-form-label col-form-label-sm">CVV No  :</label>
 						        <input type="number" id="cvvNo" class="form-control" name="cvvNo" aria-describedby="passwordHelpInline">
 						        <small id="passwordHelpInline" class="text-muted">
-      								Must be 3 digit number.
+      								Must be 3 digit number
     							</small>
 						      </div>
 						    </div>
@@ -235,8 +250,8 @@ body {
 	<footer class="footer bg-dark mt-5">
 		<div class="container">
 			<div class="text-center text-light">
-				<span>Create by , <span style="color: #87CEEB;">PAF
-						Team</span> 2021
+				<span>Designed by , <span style="color: #87CEEB;">Randil Gurusinghe 
+						</span>IT3030 Group No: Y3S2.01(IT).2 JUNE__12 (2021)
 				</span>
 			</div>
 		</div>
